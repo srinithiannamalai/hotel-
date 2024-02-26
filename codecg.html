@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Login and Sign Up</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: url('https://as1.ftcdn.net/v2/jpg/03/35/51/06/1000_F_335510693_HY7mLg3ARdLccKoXk3m66NLDpJRJh51p.jpg') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      background-color: rgba(169,169,169);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    .form-group button {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      border: none;
+      border-radius: 5px;
+      background-color: #3498db;
+      color: #fff;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .form-switch {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .form-switch a {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Hotel Login</h2>
+  <div class="form-group">
+    <input type="text" placeholder="Username">
+  </div>
+  <div class="form-group">
+    <input type="password" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <button>Login</button>
+  </div>
+  <div class="form-switch">
+    <span>Don't have an account? </span><a href="#">Sign Up</a>
+  </div>
+</div>
+
+<script>
+  document.querySelector('a').addEventListener('click', function () {
+    document.querySelector('h2').innerText = 'Hotel Sign Up';
+    document.querySelector('button').innerText = 'Sign Up';
+    document.querySelector('a').innerText = 'Already have an account? Login';
+    document.querySelector('a').removeEventListener('click', this);
+    document.querySelector('a').addEventListener('click', function () {
+      document.querySelector('h2').innerText = 'Hotel Login';
+      document.querySelector('button').innerText = 'Login';
+      document.querySelector('a').innerText = 'Don\'t have an account? Sign Up';
+      document.querySelector('a').removeEventListener('click', this);
+      document.querySelector('a').addEventListener('click', function () {
+        document.querySelector('h2').innerText = 'Hotel Sign Up';
+        document.querySelector('button').innerText = 'Sign Up';
+        document.querySelector('a').innerText = 'Already have an account? Login';
+        document.querySelector('a').removeEventListener('click', this);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
+
